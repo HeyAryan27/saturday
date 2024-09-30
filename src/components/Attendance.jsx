@@ -1,9 +1,9 @@
-import { dashboardData } from '../utils/constant'; // Import the data
+import { dashboardData } from '../utils/constant'; 
 
 const Attendance = () => {
   const data = dashboardData;
 
-  // Helper function to calculate percentage for the circular progress bar
+  
   const getStrokeDashOffset = (percentage) => {
     const radius = 36;
     const circumference = 2 * Math.PI * radius;
@@ -11,7 +11,7 @@ const Attendance = () => {
   };
 
   return (
-    <div className="col-span-1 w-full lg:w-2/6 bg-white p-6 rounded-lg shadow-md border-[1px]">
+    <div className="col-span-1  w-full lg:w-fit   bg-white p-6 rounded-lg lg:h-80 shadow-md border-[1px]">
       <div className="flex justify-between items-center md:mb-4 -mb-2">
         <h2 className="font-semibold text-lg text-blue-900">Today</h2>
         <span className="px-2 py-1 bg-red-100 text-red-600 text-sm rounded">Absent</span>
@@ -19,9 +19,9 @@ const Attendance = () => {
 
       <hr className="md:mb-4" />
 
-      {/* Flex container for details and SVG */}
+      
       <div className="flex flex-col-reverse md:flex-row items-center md:mb-4">
-        {/* Left side: Attendance Details */}
+      
         <div className="flex-1 mb-4 md:mb-0">
           <div className="flex items-center text-gray-600 mb-2">
             <svg
@@ -39,7 +39,7 @@ const Attendance = () => {
           </p>
         </div>
 
-        {/* Right side: SVG graphic */}
+      
         <div className="relative flex-shrink-0">
           <svg className="w-20 h-20 md:w-24 md:h-24 mt-2" viewBox="0 0 80 80">
             <circle
@@ -55,24 +55,25 @@ const Attendance = () => {
               className="text-yellow-500"
               strokeWidth="8"
               strokeDasharray="226"
-              strokeDashoffset={getStrokeDashOffset(67)} // Adjust value as needed
+              strokeDashoffset={`${getStrokeDashOffset(data.attendance.today.days)}`}
               strokeLinecap="round"
               stroke="currentColor"
               fill="transparent"
               r="36"
               cx="40"
               cy="40"
+              transform="rotate(-90 40 40)"
             />
           </svg>
           <div className="absolute inset-0 flex flex-col items-center justify-center mt-2">
-            <span className="text-xl font-semibold text-gray-800">67%</span>
+            <span className="text-xl font-semibold text-gray-800">{data.attendance.today.days}</span>
             <span className="text-xs text-gray-500">in office</span>
             <span className="text-xs text-yellow-500">POOR</span>
           </div>
         </div>
       </div>
 
-      {/* Button below the details and SVG */}
+  
       <button className="bg-blue-500 text-white py-2 px-4 rounded-lg w-full">Mark Present</button>
     </div>
   );

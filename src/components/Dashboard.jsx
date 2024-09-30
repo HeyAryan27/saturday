@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaRegClock } from 'react-icons/fa';
-import { dashboardData } from '../utils/constant'; // Import the data
+import { dashboardData } from '../utils/constant'; 
 import MyTeam from './MyTeam';
 import Attendance from './Attendance';
 import AttendanceCard from './AttendanceCard';
@@ -15,7 +15,7 @@ const Dashboard = () => {
       setCurrentTime(new Date());
     }, 1000);
 
-    return () => clearInterval(intervalId); // Clean up the interval on component unmount
+    return () => clearInterval(intervalId); 
   }, []);
 
   const formatTime = (date) => {
@@ -26,12 +26,12 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="p-4 bg-white rounded-lg">
-      {/* Header Section */}
+    <div className="-m-8 p-4 bg-white rounded-lg shadow-md">
+      
       <div className="flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
-        <h1 className="text-lg font-semibold">Good afternoon, {dashboardData.user}!</h1>
+        <h1 className="text-lg font-semibold"><b>Good afternoon, {dashboardData.user}!</b></h1>
         
-        {/* Time Box */}
+      
         <div className="flex items-center border border-gray-300 rounded-lg p-2 px-4">
           <div className="flex flex-col items-center mr-4">
             <span className="text-xs text-gray-600">Current time</span>
@@ -41,21 +41,32 @@ const Dashboard = () => {
         </div>
       </div>
     
-      <p className="md:-mt-5 text-xs text-gray-600 mt-2">You have {dashboardData.leaveRequests} leave requests pending.</p>
+      <p className="text-xs text-gray-600 mt-2 md:-mt-5">You have {dashboardData.leaveRequests} leave requests pending.</p>
 
-      <div className="flex justify-between flex-wrap gap-2 md:mt-3 mt-6">
-        {/* Today's attendance card */}
-        <Attendance/>
+      <div className="  flex flex-col md:flex-col lg:flex-row justify-between flex-wrap gap-4 mt-6">
+    
+        <div className="flex-1 ">
+          <Attendance />
+        </div>
 
-        {/* Attendance Cards */}
-        <AttendanceCard/>
+      
+        <div className="flex-1   ">
+          <AttendanceCard />
+        </div>
 
-        {/* Attendance summary */}
-        <AttendanceSummary/>
+      
+        <div className="flex-1">
+          <AttendanceSummary />
+        </div>
       </div>
+      
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
-        <MyTeam/>
-        <WorkingHistory/>
+        <div className="flex-1">
+          <MyTeam />
+        </div>
+        <div className="flex-1">
+          <WorkingHistory />
+        </div>
       </div>
       
     </div>

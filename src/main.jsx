@@ -7,7 +7,7 @@ import './index.css'
 import Dashboard from "./components/Dashboard"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import Recurit from './components/Recurit'
-import FullWidthCalendar from './components/FullWidthCalendar.jsx'
+// import FullWidthCalendar from './components/FullWidthCalendar.jsx'
 
 const appRouter = createBrowserRouter([
   {
@@ -19,12 +19,8 @@ const appRouter = createBrowserRouter([
         element: <Dashboard />
       },
       {
-        path:"/recurit",
+        path:"/",
         element: <Recurit />
-      },
-      {
-        path:"/calendar",
-        element: <FullWidthCalendar />
       }
 
     ]

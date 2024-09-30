@@ -8,17 +8,17 @@ function MyTeam() {
     function getStatusColor(status) {
         switch (status) {
             case 'in office':
-                return 'bg-blue-500'; // blue
+                return 'bg-blue-500'; 
             case 'work from home':
-                return 'bg-yellow-500'; // yellow
+                return 'bg-yellow-500';
             case 'on leave':
-                return 'bg-red-500'; // red
+                return 'bg-red-500'; 
             case 'absent':
-                return 'bg-gray-800'; // dark gray
+                return 'bg-gray-800'; 
             case 'holiday':
-                return 'bg-gray-300'; // light gray
+                return 'bg-gray-300'; 
             default:
-                return 'bg-gray-500'; // fallback color
+                return 'bg-gray-500';
         }
     }
 
@@ -26,7 +26,7 @@ function MyTeam() {
         <div className="bg-white p-4 rounded-lg shadow-md w-full border-[1px]">
             <h2 className="font-semibold text-lg text-blue-900">My Team</h2>
 
-            {/* Legends */}
+            
             <div className="flex items-center mt-2 text-xs text-gray-700 mb-4 flex-wrap sm:flex-nowrap">
                 <div className="flex items-center mr-3 mb-2">
                     <span className="block w-2 h-2 rounded-full bg-blue-500 mr-1"></span>
@@ -50,7 +50,7 @@ function MyTeam() {
                 </div>
             </div>
 
-            {/* Table with limited height and scroll */}
+            
             <div className="overflow-y-auto" style={{ maxHeight: '300px' }}>
                 <table className="w-full">
                     <thead>
@@ -73,7 +73,7 @@ function MyTeam() {
                                     </div>
                                 </div>
                             </th>
-                            {/* Hide other dates on smaller screens */}
+                
                             <th className="p-2 text-left text-gray-500 bg-gray-100 text-xs hidden sm:table-cell">
                                 <div className='flex justify-between items-center'>
                                     25/9
@@ -119,7 +119,7 @@ function MyTeam() {
                                         {member.dates.find(date => date.date === 'today')?.arrivalTime || '-'}
                                     </div>
                                 </td>
-                                {/* Display only past data on larger screens */}
+                        
                                 {member.dates
                                     .filter(dateData => dateData.date !== 'today')
                                     .map((dateData, dateIndex) => (

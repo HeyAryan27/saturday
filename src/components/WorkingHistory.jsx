@@ -3,31 +3,28 @@ import { FaSortUp, FaSortDown } from 'react-icons/fa';
 import { workingHistoryData } from '../utils/constant';
 
 function WorkingHistory() {
-  const [sortOrder, setSortOrder] = useState('asc'); // State for sorting order
-  const [sortKey, setSortKey] = useState('date'); // State for sorting key
+  const [sortOrder, setSortOrder] = useState('asc'); 
+  const [sortKey, setSortKey] = useState('date'); 
 
-  // Helper function to get circle color based on effective time
   const getCircleColor = (effectiveTime) => {
     const hours = parseFloat(effectiveTime.split(':')[0]);
-    if (hours >= 9) return 'text-green-500'; // Full green circle for 9 or more hours
-    if (hours > 4) return 'text-yellow-500'; // Yellow circle for more than 4 hours
-    return 'text-red-500'; // Red circle for less than 4 hours
+    if (hours >= 9) return 'text-green-500'; 
+    if (hours > 4) return 'text-yellow-500'; 
+    return 'text-red-500'; 
   };
 
-  // Convert time string to hours
   const convertToHours = (timeString) => {
     const [hours, minutes] = timeString.split(':').map(Number);
     return hours + minutes / 60;
   };
 
-  // Calculate stroke dashoffset based on effective time
+  
   const getStrokeDashOffset = (effectiveTime) => {
     const hours = parseFloat(effectiveTime.split(':')[0]);
     const percentage = Math.min(hours / 9, 1) * 100;
     return (226 * (100 - percentage)) / 100;
   };
 
-  // Sorting function
   const sortedData = [...workingHistoryData].sort((a, b) => {
     let aValue, bValue;
 
@@ -136,16 +133,16 @@ function WorkingHistory() {
               </tr>
             ) : (
               sortedData.map((entry, index) => {
-                const isToday = entry.departureTime === 'Still in office'; // Check if it's today
+                const isToday = entry.departureTime === 'Still in office'; 
 
                 return (
                   <tr key={index} className="hover:bg-gray-200">
                     <td className="p-2 text-left flex items-center mt-1 text-xs">
-                      {/* Circle with day */}
+                
                       <div className={`w-6 h-6 md:text-sm text-xs flex items-center justify-center rounded-full bg-gray-300 text-gray-700 text-xs mr-2`}>
-                        {isToday ? 'T' : entry.date.split('/')[0]} {/* Show "T" for Today */}
+                        {isToday ? 'T' : entry.date.split('/')[0]}
                       </div>
-                      {/* Full date or "Today's" */}
+                  
                       {isToday ? <span className="md:text-sm text-xs text-blue-600">Today's</span> : entry.date}
                     </td>
                     <td className="p-2 text-left text-xs hidden md:table-cell">{entry.arrivalTime}</td>
@@ -158,13 +155,13 @@ function WorkingHistory() {
                     </td>
                     <td className="p-2 text-left md:text-xs text-[10px]">
                       <div className="flex items-center justify-around">
-                        {/* Effective time on the left */}
+                      
                         <div>
                           <span>{entry.effectiveTime} hours</span>
                           <br />
                           <span className="text-gray-500">/ 9 hours</span>
                         </div>
-                        {/* Progress circle on the right */}
+                    
                         <svg className="w-6 h-6" viewBox="0 0 80 80">
                           <circle
                             className="text-gray-200"

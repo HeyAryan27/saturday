@@ -1,13 +1,14 @@
 import React from 'react';
-import { FiHome, FiUsers, FiCalendar, FiTruck, FiBriefcase, FiMessageSquare, FiX } from 'react-icons/fi'; // Importing necessary icons
+import { FiHome, FiUsers, FiCalendar, FiTruck, FiBriefcase, FiMessageSquare, FiX } from 'react-icons/fi'; 
 import { Link } from 'react-router-dom';
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
   return (
     <div className={`sm:h-screen fixed md:relative top-0 left-0 w-20 bg-white border-r border-b z-20 transform ${isOpen ? "translate-x-0" : "-translate-x-full"} transition-transform duration-200 ease-in-out md:translate-x-0`}>
       <div className="flex items-center justify-between h-16 px-2">
-        <img src="/logo.png" alt="Logo" className="h-10" />
-        {/* Close button for mobile */}
+        {/* <img src="/logo.png" alt="Logo" className="h-10" /> */}
+        <h3>Lex</h3>
+  
         <FiX className="md:hidden text-gray-800 cursor-pointer" size={24} onClick={toggleSidebar} />
       </div>
       <ul className="mt-6 text-xs -ml-10">

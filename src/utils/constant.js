@@ -1,12 +1,13 @@
 // constant.js
 export const dashboardData = {
-    user: 'John Doe',
+    user: 'Saurav',
     currentTime: '2:30 PM',
     leaveRequests: 3,
     attendance: {
       today: {
         status: 'present',
         timeLeft: '3h 45m',
+        days: 50
       },
       averageHours: '8h 30m',
       averageCheckIn: '9:05 AM',
