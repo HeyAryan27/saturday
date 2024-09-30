@@ -23,12 +23,12 @@ const Navbar = ({ toggleSidebar }) => {
         <FiMenu className="text-gray-800 cursor-pointer md:hidden" size={24} onClick={toggleSidebar} />
         {/* {isHeadingVisible && <h1 className="text-lg font-bold text-gray-800 md:text-xl">Attendance</h1>} */}
       
-        <ul className="  flex space-x-4  " style={{fontSize:"15px"}}>
+        {/* <ul className="  flex space-x-4  " style={{fontSize:"15px"}}>
             <li className=" text-blue-600 border-b-2 border-blue-600">Dashboard</li>
             <li className="text-gray-600 border-blue-600 cursor-pointer">Attendance</li>
             <li className="text-gray-600 hover:text-blue-600 cursor-pointer">Leave</li>
             <li className="text-gray-600 hover:text-blue-600 cursor-pointer">Performance</li>
-          </ul>
+          </ul> */}
       </div>
 
       

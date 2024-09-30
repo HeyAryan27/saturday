@@ -4,7 +4,7 @@ import { FaClock, FaSignInAlt, FaSignOutAlt, FaRegClock } from 'react-icons/fa';
 const AttendanceCard = () => {
     const data = dashboardData; 
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 lg:h-80 gap-4 ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2  lg:h-80 gap-4 ">
 
             <div className="bg-white p-4  rounded-lg shadow-md border border-gray-200">
                 <div className="flex flex-col items-center">
