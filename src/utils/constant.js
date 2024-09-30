@@ -29,44 +29,44 @@ export const dashboardData = {
 
   export const team = [
     {
-      "name": "Alena Gouse",
-      "role": "UI Designer-UID1",
+      "name": "Aryan",
+      "role": "UI Designer",
       "profileImage": "https://i.pinimg.com/originals/6d/5f/c6/6d5fc60bae3dc6139eefa31af206596f.jpg",
       "dates": generateDates()
     },
     {
-      "name": "Miracle Vetrovs",
-      "role": "UX Designer-UXD2",
+      "name": "Aman",
+      "role": "UX Designer",
       "profileImage": "https://cdn.openart.ai/published/S7jOXsdB3tMDFy6JNfak/-nmXB1M1_vvaY_1024.webp",
       "dates": generateDates()
     },
     {
-      "name": "John Doe",
-      "role": "Software Engineer-SE1",
+      "name": "Aniket",
+      "role": "Software Engineer",
       "profileImage": "https://i.pinimg.com/474x/8c/44/07/8c44070959b012caa775ee4929c15ffe.jpg",
       "dates": generateDates()
     },
     {
-      "name": "Jane Smith",
-      "role": "Product Manager-PM1",
+      "name": "Golu",
+      "role": "Product Manager",
       "profileImage": "https://png.pngtree.com/thumb_back/fh260/background/20230527/pngtree-cartoon-of-a-young-woman-smiling-on-a-black-background-image_2680954.jpg",
       "dates": generateDates()
     },
     {
-      "name": "Emily Johnson",
-      "role": "Marketing Specialist-MS1",
+      "name": "Sunil",
+      "role": "Marketing Specialist",
       "profileImage": "https://png.pngtree.com/thumb_back/fh260/background/20230527/pngtree-in-the-style-of-dark-turquoise-and-light-navy-image_2698692.jpg",
       "dates": generateDates()
     },
     {
-      "name": "Michael Brown",
-      "role": "Data Analyst-DA1",
+      "name": "Rajesh",
+      "role": "Data Analyst",
       "profileImage": "https://png.pngtree.com/thumb_back/fh260/background/20230527/pngtree-an-animated-illustration-that-features-a-young-man-playing-a-game-image_2680953.jpg",
       "dates": generateDates()
     },
     {
-      "name": "Sarah Davis",
-      "role": "HR Manager-HR1",
+      "name": "Hira",
+      "role": "HR Manager",
       "profileImage": "https://img.freepik.com/premium-vector/young-man-face-avater-vector-illustration-design_968209-13.jpg",
       "dates": generateDates()
     }
@@ -100,108 +100,7 @@ export const dashboardData = {
 // workingHistoryData.js
 
 export const workingHistoryData = [
-  {
-    date: '26/9/23', // today's date
-    arrivalTime: '9:15 AM',
-    departureTime: 'Still in office',
-    effectiveTime: '5:45',
-  },
-  {
-    date: '25/9/23',
-    arrivalTime: '8:50 AM',
-    departureTime: '6:00 PM',
-    effectiveTime: '9:10',
-  },
-  {
-    date: '24/9/23',
-    arrivalTime: '10:10 AM',
-    departureTime: '5:45 PM',
-    effectiveTime: '7:35',
-  },
-  {
-    date: '23/9/23',
-    arrivalTime: '12:30 PM',
-    departureTime: '3:45 PM',
-    effectiveTime: '3:15',
-  },
-  {
-    date: '22/9/23',
-    arrivalTime: 'absent',
-    departureTime: '-',
-    effectiveTime: '-',
-  },
-  {
-    date: '21/9/23',
-    arrivalTime: '9:00 AM',
-    departureTime: '5:00 PM',
-    effectiveTime: '8:00',
-  },
-  {
-    date: '20/9/23',
-    arrivalTime: '8:45 AM',
-    departureTime: '5:30 PM',
-    effectiveTime: '8:45',
-  },
-  {
-    date: '19/9/23',
-    arrivalTime: '9:30 AM',
-    departureTime: '4:00 PM',
-    effectiveTime: '6:30',
-  },
-  {
-    date: '18/9/23',
-    arrivalTime: '10:00 AM',
-    departureTime: '4:30 PM',
-    effectiveTime: '6:30',
-  },
-  {
-    date: '17/9/23',
-    arrivalTime: 'holiday',
-    departureTime: '-',
-    effectiveTime: '-',
-  },
-  {
-    date: '16/9/23',
-    arrivalTime: 'holiday',
-    departureTime: '-',
-    effectiveTime: '-',
-  },
-  {
-    date: '15/9/23',
-    arrivalTime: '9:15 AM',
-    departureTime: '6:00 PM',
-    effectiveTime: '8:45',
-  },
-  {
-    date: '14/9/23',
-    arrivalTime: 'absent',
-    departureTime: '-',
-    effectiveTime: '-',
-  },
-  {
-    date: '13/9/23',
-    arrivalTime: 'leave',
-    departureTime: '-',
-    effectiveTime: '-',
-  },
-  {
-    date: '12/9/23',
-    arrivalTime: '8:55 AM',
-    departureTime: '5:15 PM',
-    effectiveTime: '8:20',
-  },
-  {
-    date: '11/9/23',
-    arrivalTime: '9:05 AM',
-    departureTime: '5:45 PM',
-    effectiveTime: '8:40',
-  },
-  {
-    date: '10/9/23',
-    arrivalTime: 'holiday',
-    departureTime: '-',
-    effectiveTime: '-',
-  },
+  
   {
     date: '9/9/23',
     arrivalTime: 'holiday',
