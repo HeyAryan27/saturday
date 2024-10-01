@@ -11,7 +11,7 @@ const Attendance = () => {
   };
 
   return (
-    <div className="col-span-1  w-full lg:w-fit   bg-white p-6 rounded-lg lg:h-80 shadow-md border-[1px]">
+    <div className="col-span-1  w-full lg:w-fit   bg-white p-6 rounded-lg lg:h-80  xl:w-full shadow-md border-[1px]">
       <div className="flex justify-between items-center md:mb-4 -mb-2">
         <h2 className="font-semibold text-lg text-blue-900">Today</h2>
         <span className="px-2 py-1 bg-red-100 text-red-600 text-sm rounded">Absent</span>

@@ -3,14 +3,13 @@ import { dashboardData } from '../utils/constant';
 const AttendanceSummary = () => {
     const data = dashboardData; 
     return (
-        <div className="col-span-1 w-auto  lg:w-auto bg-white p-6 rounded-lg lg:h-80 shadow-md border-[1px]">
+        <div className="col-span-1 w-auto  lg:w-auto bg-white p-6   rounded-lg lg:h-80 shadow-md border-[1px]">
         <div className="flex justify-between items-center ">
           <h2 className="font-semibold text-lg text-blue-900">My Attendance</h2>
           <span className="px-2 py-1 font-semibold text-blue-600 text-sm rounded cursor-pointer">
             View Status
           </span>
         </div>
-
   
 
   

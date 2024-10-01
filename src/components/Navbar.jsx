@@ -21,7 +21,7 @@ const Navbar = ({ toggleSidebar }) => {
 
       <div className="flex items-center space-x-4">
         <FiMenu className="text-gray-800 cursor-pointer md:hidden" size={24} onClick={toggleSidebar} />
-        {isHeadingVisible && <h1 className="text-lg font-bold text-gray-800 md:text-xl">Dashboard</h1>}
+        {<h1 className="text-lg font-bold text-gray-800 md:text-xl">Dashboard</h1>}
       
         {/* <ul className="  flex space-x-4  " style={{fontSize:"15px"}}>
             <li className=" text-blue-600 border-b-2 border-blue-600">Dashboard</li>

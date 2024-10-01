@@ -26,7 +26,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div className=" p-4 bg-white rounded-lg shadow-md">
+    <div className=" p-2   bg-white rounded-lg shadow-md">
       
       <div className="flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
         <h1 className="text-lg font-semibold" style={{fontSize:"25px"}}><b>Good Afternoon, {dashboardData.user}!</b></h1>
@@ -41,7 +41,7 @@ const Dashboard = () => {
         </div>
       </div>
     
-      <p className="text-xs text-gray-600 mt-2 md:-mt-5">You have {dashboardData.leaveRequests} leave requests pending.</p>
+      <p className="text-xs text-gray-600 mt-2  md:-mt-5">You have {dashboardData.leaveRequests} leave requests pending.</p>
 
       <div className="  flex flex-col md:flex-col lg:flex-row justify-between flex-wrap gap-4 mt-6">
     
@@ -60,7 +60,7 @@ const Dashboard = () => {
         </div>
       </div>
       
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2  gap-4 mt-4">
         <div className="flex-1">
           <MyTeam />
         </div>
