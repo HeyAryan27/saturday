@@ -1,3 +1,4 @@
+// WorkingHistory.js
 import React, { useState } from 'react';
 import { FaSortUp, FaSortDown } from 'react-icons/fa';
 import { workingHistoryData } from '../utils/constant';
@@ -9,8 +10,8 @@ function WorkingHistory() {
   const getCircleColor = (effectiveTime) => {
     const hours = parseFloat(effectiveTime.split(':')[0]);
     if (hours >= 9) return 'text-green-500'; 
-    if (hours > 4) return 'text-yellow-500'; 
-    return 'text-red-500'; 
+    if (hours > 4) return 'text-yellow-500';  
+    return 'text-red-500';  
   };
 
   const convertToHours = (timeString) => {
@@ -18,7 +19,6 @@ function WorkingHistory() {
     return hours + minutes / 60;
   };
 
-  
   const getStrokeDashOffset = (effectiveTime) => {
     const hours = parseFloat(effectiveTime.split(':')[0]);
     const percentage = Math.min(hours / 9, 1) * 100;
@@ -59,11 +59,11 @@ function WorkingHistory() {
   };
 
   return (
-    <div className="bg-white p-4 rounded-lg shadow-md w-full border-[1px]">
-      <div className="flex justify-between items-center mb-4">
-        <div>
-          <h2 className="font-semibold text-lg text-blue-900">Working History</h2>
-          <div className="flex items-center mt-2 text-xs text-gray-700 mb-4 flex-wrap sm:flex-nowrap">
+    <div className="bg-white p-4  rounded-lg shadow-md w-full border-[1px]">
+      <div className="flex flex-col md:flex-row justify-between items-center mb-4">
+        <div className="mb-4 md:mb-0">
+          <h2 className="font-semibold text-lg text-blue-900  md:text-left">Working History</h2>
+          <div className="flex flex-wrap items-center text-xs text-gray-700  mt-4">
             <div className="flex items-center mr-2">
               <span className="block w-2 h-2 rounded-full bg-green-500 mr-1"></span>
               <span>Meeting Criteria</span>
@@ -76,16 +76,28 @@ function WorkingHistory() {
               <span className="block w-2 h-2 rounded-full bg-red-500 mr-1"></span>
               <span>Action Needed</span>
             </div>
-            <div className="flex items-center mr-2">
+            <div className="flex items-center">
               <span className="block w-2 h-2 rounded-full bg-orange-400 mr-1"></span>
               <span>Overtime</span>
             </div>
           </div>
         </div>
+        {/* <div className="relative w-full md:w-auto">
+          <select className="block appearance-none w-full md:w-auto py-2 px-6 border border-gray-300 bg-white text-gray-700 text-xs rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+            <option>Show All</option>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+          </select>
+          <svg className="absolute right-1 top-1/2 transform -translate-y-1/2 w-3 h-3 text-gray-500 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </div> */}
+        
       </div>
 
-      <div className="overflow-auto md:-mt-4 -mt-5" style={{ maxHeight: '300px' }}>
-        <table className="w-full border-collapse">
+      <div className="overflow-auto -mt-4"  style={{ maxHeight: '372px' }}>
+        <table className="w-full border-collapse table-auto">
           <thead>
             <tr>
               <th className="p-2 text-left text-gray-500 bg-gray-100 rounded-tl-lg text-xs">
@@ -97,7 +109,7 @@ function WorkingHistory() {
                   </div>
                 </div>
               </th>
-              <th className="p-2 text-left text-gray-500 bg-gray-100 text-xs hidden md:table-cell">
+              <th className="p-2 text-left text-gray-500 bg-gray-100 text-xs">
                 <div className="flex justify-between items-center cursor-pointer" onClick={() => handleSort('arrivalTime')}>
                   Arrival
                   <div className="flex flex-col">
@@ -106,7 +118,7 @@ function WorkingHistory() {
                   </div>
                 </div>
               </th>
-              <th className="p-2 text-left text-gray-500 bg-gray-100 text-xs hidden md:table-cell">
+              <th className="p-2 text-left text-gray-500 bg-gray-100 text-xs">
                 <div className="flex justify-between items-center cursor-pointer" onClick={() => handleSort('departureTime')}>
                   Departure
                   <div className="flex flex-col">
@@ -117,7 +129,7 @@ function WorkingHistory() {
               </th>
               <th className="p-2 text-left text-gray-500 bg-gray-100 text-xs">
                 <div className="flex justify-between items-center cursor-pointer" onClick={() => handleSort('effectiveTime')}>
-                  Effective time
+                  Effective Time
                   <div className="flex flex-col">
                     <FaSortUp className={`inline mt-2 ${sortKey === 'effectiveTime' && sortOrder === 'asc' ? 'text-blue-600' : 'text-gray-400'}`} />
                     <FaSortDown className={`inline-block -mt-[10px] ${sortKey === 'effectiveTime' && sortOrder === 'desc' ? 'text-blue-600' : 'text-gray-400'}`} />
@@ -134,34 +146,31 @@ function WorkingHistory() {
             ) : (
               sortedData.map((entry, index) => {
                 const isToday = entry.departureTime === 'Still in office'; 
+                const isAbsent = entry.arrivalTime === 'absent';
+                const isHoliday = entry.arrivalTime === 'holiday';
+                const isLeave = entry.arrivalTime === 'leave';
 
                 return (
                   <tr key={index} className="hover:bg-gray-200">
                     <td className="p-2 text-left flex items-center mt-1 text-xs">
-                
-                      <div className={`w-6 h-6 md:text-sm text-xs flex items-center justify-center rounded-full bg-gray-300 text-gray-700 text-xs mr-2`}>
-                        {isToday ? 'T' : entry.date.split('/')[0]}
+                      <div className={`w-6 h-6 flex items-center justify-center rounded-full bg-gray-300 text-gray-700 text-xs mr-2`}>
+                        {isToday ? 'T' : entry.date.split('/')[0]} 
                       </div>
-                  
-                      {isToday ? <span className="md:text-sm text-xs text-blue-600">Today's</span> : entry.date}
+                      {isToday ? <span className="text-blue-600">Today's</span> : entry.date}
                     </td>
-                    <td className="p-2 text-left text-xs hidden md:table-cell">{entry.arrivalTime}</td>
-                    <td className="p-2 text-left text-xs hidden md:table-cell">
-                      {entry.departureTime === 'Still in office' ? (
-                        <span className="text-blue-500">{entry.departureTime}</span>
-                      ) : (
-                        entry.departureTime
-                      )}
+                    <td className={`p-2 text-left text-xs ${isAbsent ? 'text-red-500' : isHoliday ? 'text-yellow-500' : isLeave ? 'text-green-500' : ''}`}>
+                      {entry.arrivalTime}
                     </td>
-                    <td className="p-2 text-left md:text-xs text-[10px]">
+                    <td className={`p-2 text-left text-xs ${isToday ? 'text-gray-400' : ''}`}>
+                      {entry.departureTime}
+                    </td>
+                    <td className="p-2 text-left text-xs">
                       <div className="flex items-center justify-around">
-                      
                         <div>
                           <span>{entry.effectiveTime} hours</span>
                           <br />
                           <span className="text-gray-500">/ 9 hours</span>
                         </div>
-                    
                         <svg className="w-6 h-6" viewBox="0 0 80 80">
                           <circle
                             className="text-gray-200"
@@ -183,6 +192,7 @@ function WorkingHistory() {
                             r="36"
                             cx="40"
                             cy="40"
+                            transform="rotate(-90 40 40)"
                           />
                         </svg>
                       </div>
